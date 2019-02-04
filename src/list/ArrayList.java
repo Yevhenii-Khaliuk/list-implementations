@@ -3,16 +3,14 @@ package list;
 public class ArrayList<T> implements List<T> {
     private static final int DEFAULT_CAPACITY = 16;
     private Object[] values;
-    private int size;
+    private int size = 0;
 
     public ArrayList() {
         values = new Object[DEFAULT_CAPACITY];
-        size = 0;
     }
 
     public ArrayList(int capacity) {
         values = new Object[capacity];
-        size = 0;
     }
 
     @Override
