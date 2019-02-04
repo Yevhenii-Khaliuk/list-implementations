@@ -1,3 +1,5 @@
+package list;
+
 public class ArrayList<T> implements List<T> {
     private static final int DEFAULT_CAPACITY = 16;
     private Object[] values;
@@ -72,14 +74,14 @@ public class ArrayList<T> implements List<T> {
     @Override
     public String toString() {
         if (size == 0) {
-            return "ArrayList is empty!";
+            return "list.ArrayList is empty!";
         } else {
             StringBuilder valuesString = new StringBuilder();
             for (int i = 0; i < size; i++) {
                 valuesString.append(values[i].toString()).append(", ");
             }
             valuesString.delete(valuesString.length() - 2, valuesString.length()); // Remove last comma and space
-            return "ArrayList {" +
+            return "list.ArrayList {" +
                     "values = [" + valuesString.toString() +
                     "]}";
         }

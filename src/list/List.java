@@ -1,3 +1,5 @@
+package list;
+
 public interface List<T> {
     T get();
     void add(T t);

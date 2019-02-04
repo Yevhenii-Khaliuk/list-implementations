@@ -1,3 +1,5 @@
+package list;
+
 public class LinkedList<T> implements List<T> {
     private int size;
     private Node first;
@@ -54,7 +56,7 @@ public class LinkedList<T> implements List<T> {
     @Override
     public String toString() {
         if (size == 0) {
-            return "LinkedList is empty!";
+            return "list.LinkedList is empty!";
         } else {
             Node head = first;
             StringBuilder valuesString = new StringBuilder();
@@ -63,7 +65,7 @@ public class LinkedList<T> implements List<T> {
                 valuesString.append(head.value.toString()).append(", ");
             }
             valuesString.delete(valuesString.length() - 2, valuesString.length()); // Remove last comma and space
-            return "LinkedList {" +
+            return "list.LinkedList {" +
                     "values = [" + valuesString.toString() +
                     "]}";
         }
