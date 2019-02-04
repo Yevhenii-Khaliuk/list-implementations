@@ -26,6 +26,7 @@ public class LinkedList<T> implements List<T> {
             }
             Node newNode = new Node();
             newNode.value = t;
+            newNode.prev = head;
             head.next = newNode;
         }
         size++;
@@ -43,6 +44,9 @@ public class LinkedList<T> implements List<T> {
                     i--;
                 }
                 head.next = head.next.next;
+                if (head.next != null) {
+                    head.next.prev = head;
+                }
             }
             size--;
         }
@@ -74,5 +78,6 @@ public class LinkedList<T> implements List<T> {
     private class Node {
         T value;
         Node next;
+        Node prev;
     }
 }
