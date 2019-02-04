@@ -46,7 +46,7 @@ public class ArrayList<T> implements List<T> {
                 values[index] = values[index + 1];
             }
             size--;
-            if (size <= values.length / 4) {
+            if (size <= values.length / 4 && values.length > DEFAULT_CAPACITY) {
                 resizeLess();
             }
         }
