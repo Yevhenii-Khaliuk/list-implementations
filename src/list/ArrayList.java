@@ -14,20 +14,11 @@ public class ArrayList<T> implements List<T> {
     }
 
     @Override
-    public T get() {
-        Object value = null;
-        if (values[0] != null) {
-            value = values[0];
-        }
-        return value == null ? null : (T) value;
-    }
-
     public T get(int index) {
-        Object value = null;
-        if (index < size) {
-            value = values[index];
+        if (index < 0 || index >= size) {
+            throw new ArrayIndexOutOfBoundsException();
         }
-        return value == null ? null : (T) value;
+        return (T) values[index];
     }
 
     @Override

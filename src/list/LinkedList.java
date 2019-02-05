@@ -12,9 +12,16 @@ public class LinkedList<T> implements List<T> {
     }
 
     @Override
-    public T get() {
-        T value = first == null ? null : first.value;
-        return value;
+    public T get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IllegalArgumentException();
+        }
+        Node head = first;
+        while (index > 0) {
+            head = head.next;
+            index--;
+        }
+        return head.value;
     }
 
     @Override
