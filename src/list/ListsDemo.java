@@ -21,5 +21,8 @@ public class ListsDemo {
         linkedList.remove(1);
         System.out.println(linkedList);
         System.out.println("Size = " + linkedList.size());
+        linkedList.remove(1);
+        System.out.println(linkedList);
+        System.out.println("Size = " + linkedList.size());
     }
 }

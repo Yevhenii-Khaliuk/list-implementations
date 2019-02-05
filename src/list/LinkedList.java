@@ -3,9 +3,11 @@ package list;
 public class LinkedList<T> implements List<T> {
     private int size;
     private Node first;
+    private Node last;
 
     public LinkedList() {
         first = new Node();
+        last = first;
         size = 0;
     }
 
@@ -19,15 +21,13 @@ public class LinkedList<T> implements List<T> {
     public void add(T t) {
         if (size == 0) {
             first.value = t;
+            last = first;
         } else {
-            Node head = first;
-            while (head.next != null) {
-                head = head.next;
-            }
             Node newNode = new Node();
             newNode.value = t;
-            newNode.prev = head;
-            head.next = newNode;
+            newNode.prev = last;
+            last.next = newNode;
+            last = newNode;
         }
         size++;
     }
@@ -35,18 +35,26 @@ public class LinkedList<T> implements List<T> {
     @Override
     public void remove(int i) {
         if (i >= 0 && i < size) {
-            if (i == 0) {
+            Node head = first;
+            while (i > 0) {
+                head = head.next;
+                i--;
+            }
+            if (head.prev == null) {
                 first = first.next;
+                if (first != null) {
+                    first.prev = null;
+                }
             } else {
-                Node head = first;
-                while (i > 1) {
-                    head = head.next;
-                    i--;
+                head.prev.next = head.next;
+            }
+            if (head.next == null) {
+                last = last.prev;
+                if (last != null) {
+                    last.next = null;
                 }
-                head.next = head.next.next;
-                if (head.next != null) {
-                    head.next.prev = head;
-                }
+            } else {
+                head.next.prev = head.prev;
             }
             size--;
         }
