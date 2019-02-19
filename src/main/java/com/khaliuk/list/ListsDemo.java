@@ -1,4 +1,4 @@
-package list;
+package com.khaliuk.list;
 
 public class ListsDemo {
     public static void main(String[] args) {
