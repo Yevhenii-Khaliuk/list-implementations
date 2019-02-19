@@ -75,7 +75,7 @@ public class LinkedList<T> implements List<T> {
     @Override
     public String toString() {
         if (size == 0) {
-            return "com.khaliuk.list.LinkedList is empty!";
+            return "LinkedList is empty!";
         } else {
             Node head = first;
             StringBuilder valuesString = new StringBuilder();
@@ -84,7 +84,7 @@ public class LinkedList<T> implements List<T> {
                 valuesString.append(head.value.toString()).append(", ");
             }
             valuesString.delete(valuesString.length() - 2, valuesString.length()); // Remove last comma and space
-            return "com.khaliuk.list.LinkedList {" +
+            return "LinkedList {" +
                     "values = [" + valuesString.toString() +
                     "]}";
         }
