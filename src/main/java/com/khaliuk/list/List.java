@@ -1,4 +1,4 @@
-package list;
+package com.khaliuk.list;
 
 public interface List<T> {
     T get(int index);

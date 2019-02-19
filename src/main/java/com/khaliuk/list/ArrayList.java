@@ -1,4 +1,4 @@
-package list;
+package com.khaliuk.list;
 
 public class ArrayList<T> implements List<T> {
     private static final int DEFAULT_CAPACITY = 16;
@@ -63,14 +63,14 @@ public class ArrayList<T> implements List<T> {
     @Override
     public String toString() {
         if (size == 0) {
-            return "list.ArrayList is empty!";
+            return "com.khaliuk.list.ArrayList is empty!";
         } else {
             StringBuilder valuesString = new StringBuilder();
             for (int i = 0; i < size; i++) {
                 valuesString.append(values[i].toString()).append(", ");
             }
             valuesString.delete(valuesString.length() - 2, valuesString.length()); // Remove last comma and space
-            return "list.ArrayList {" +
+            return "com.khaliuk.list.ArrayList {" +
                     "values = [" + valuesString.toString() +
                     "]}";
         }
